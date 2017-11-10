@@ -1,0 +1,111 @@
+.content-info {
+  background-color: $brand-reynolds;
+  color: $brand-white;
+  flex: 0 0 auto;
+  font-size: $font-size-small;
+  line-height: $line-height-foot;
+  margin-top: $larger-horizontal;
+
+  .container {
+    display: flex;
+    padding: $base-pad 0;
+  }
+
+  li::before {
+    color: $brand-white;
+	} // List Items:Before
+
+  a,
+  a:focus {
+    color: $gray-lighter;
+
+    &:hover {
+      color: $gray-lighter;
+      text-decoration: underline;
+		}
+	} // Links
+
+  .blog-info {
+    flex: 2;
+
+    address {
+      line-height: $line-height-base;
+		}
+
+    h4 {
+      font-family: $univers-condensed;
+      font-weight: bold;
+		}
+
+    p {
+      font-size: $font-size-base;
+		}
+	} // Blog Info Section
+
+  .social {
+    flex: 1;
+
+    li::before {
+      display: none;
+		}
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding: 0;
+		}
+
+    .glyphicon {
+      font-size: $font-size-h3;
+      padding-right: $base-vertical;
+      vertical-align: middle;
+		}
+	} // Social Section
+} // Content-Info
+
+.ncsu-footer {
+  color: $brand-red;
+  height: auto;
+  padding: $base-pad 0;
+
+  h4 {
+    float: left;
+    font-family: $univers-condensed;
+    font-size: 30px;
+    margin: 0;
+    padding: 0 $base-pad;
+
+    @media (max-width:1003px) {
+      float: none;
+		}
+	}
+
+  address {
+    float: right;
+    margin: 0;
+    padding: 0 $base-pad;
+
+    @media (max-width:1003px) {
+      float: none;
+		}
+	}
+
+  span {
+    line-height: $line-height-foot;
+    margin: 0 $base-vertical;
+	}
+
+  .container {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+
+    @media (max-width:1100px) {
+      width: 100%;
+		}
+	}
+}

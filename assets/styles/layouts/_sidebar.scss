@@ -1,0 +1,11 @@
+.sidebar {
+  flex: 1;
+  order: 2;
+  padding: 0 15px;
+
+  @media (max-width: $screen-sm) {
+    flex: 100%;
+    margin: 0;
+    padding: 0 $base-pad;
+   }
+}

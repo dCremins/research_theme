@@ -1,0 +1,124 @@
+html,
+body {
+  color: $gray-darker;
+  display: flex;
+  flex-direction: column;
+  font-family: $univers-light;
+  font-size: $font-size-base;
+  height: 100%;
+
+  a {
+    color: $link-color;
+
+    &:hover {
+      color: $link-darken-color;
+    }
+  }
+
+  h1 {
+    color: $brand-red;
+    font-size: $font-size-h1;
+    margin: $larger-vertical 0;
+  }
+
+  h3 {
+    color: $gray;
+    margin: 0 0 $base-pad;
+  }
+
+  ul li::before {
+    vertical-align: middle;
+  }
+}
+
+.wrap.container {
+  flex: 1 0 auto;
+}
+
+.container {
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+
+  @media (min-width: $screen-lg-min + 300) {
+    width: 1500px;
+  }
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+  }
+
+  header {
+    border: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-flow: wrap row;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+img {
+  height: auto;
+  margin-bottom: 21px;
+  max-width: 100%;
+}
+
+.main {
+  background-color: $brand-white;
+  flex: 3;
+  margin-bottom: 0;
+  margin-top: 0;
+  order: 1;
+  padding-bottom: 0;
+
+  p {
+    margin: 0 0 21px;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 21px;
+  }
+} // Main
+
+.sidebar {
+  @include make-md-column(3);
+  margin-bottom: 7em;
+}
+
+.wp-caption-text {
+  color: inherit;
+  font-family: $glypha-roman;
+  font-size: $font-size-small;
+  width: 75%;
+}
+
+.post header:hover + .more .glyphicon {
+  left: 10px;
+}
+
+.more {
+  .glyphicon {
+    display: inline-block;
+    left: 5px;
+    position: relative;
+    top: -1px;
+    transition: left .2s ease;
+    vertical-align: middle;
+  }
+
+  &:hover .glyphicon {
+    left: 10px;
+  }
+}

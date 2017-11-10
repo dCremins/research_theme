@@ -1,0 +1,29 @@
+.author-page {
+  align-items: center;
+  display: flex;
+  min-height: 120px;
+  padding: 0 $base-pad;
+}
+
+.author-description {
+  background-color: $gray-lighter;
+  flex: 1;
+  font-family: $glypha-roman;
+  margin: $larger-horizontal 0;
+  padding: $large-horizontal;
+
+  &.with-photo {
+    margin-left: 50px;
+  }
+}
+
+.author-photo {
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+.author-name {
+	font-size: 21px;
+	margin-bottom: 15px;
+	margin-top: 0;
+}

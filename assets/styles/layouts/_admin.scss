@@ -1,0 +1,24 @@
+.extended-flex {
+  .values {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .select2-container .select2-chosen {
+    margin-right: 0;
+    width: 400px;
+  }
+
+  .layout {
+    flex: 1;
+    margin: 0 5px 5px;
+
+    .values {
+      display: block;
+    }
+  }
+
+  [data-layout~="row"] {
+    flex: 100%;
+  }
+}

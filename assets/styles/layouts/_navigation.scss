@@ -1,0 +1,164 @@
+.primary-nav {
+  display: block;
+  font-family: $univers;
+  font-size: 15px;
+  margin: 0;
+  padding: $base-vertical 0 0;
+
+  a {
+    color: $gray-dark;
+    padding: 0 $base-horizontal;
+
+    &:hover {
+      color: $brand-red;
+    }
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 2.5% $base-vertical;
+
+    &:first-child,
+    &:first-child a {
+      padding-left: 0;
+
+      @media (max-width: $screen-sm) {
+        padding: 0 $base-horizontal;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &:hover ul {
+      display: block;
+    }
+
+    @media (max-width: $screen-sm) {
+      float: none;
+      margin: $base-vertical 0;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    border-top: 1px solid $gray-lighter;
+    display: none;
+    font-size: $font-size-large;
+    margin: $base-vertical 0;
+  }
+}
+
+.sub-menu {
+  background-color: $gray-lighter;
+  border-top: 2px solid $brand-red;
+  display: none;
+  line-height: 1em;
+  margin-left: -10px;
+  margin-top: $base-vertical;
+  min-width: 170px;
+  padding: 15px 0 0;
+  position: absolute;
+  width: 250px;
+  z-index: 1001;
+
+  li {
+    display: block;
+    padding: 0 $base-horizontal $base-horizontal;
+
+    a {
+      padding: 0;
+    }
+
+    &:first-child {
+      padding: 0 $base-horizontal $base-horizontal;
+    }
+  }
+}
+
+.utility-nav {
+  float: right;
+  font-family: $univers-condensed;
+  font-size: $font-size-smaller;
+  margin: $larger-vertical 0;
+  padding: 0;
+  text-transform: uppercase;
+
+  a {
+    color: $gray;
+    padding: 0 $small-horizontal;
+
+    &:hover {
+      color: $brand-red;
+    }
+  }
+
+  li {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 11px;
+
+    &:last-child a {
+      padding-right: 0;
+    }
+
+    &::before {
+      content: none;
+    }
+
+    + li {
+      border-left: 1px solid $gray-light;
+    }
+  } // Li
+} //Utility Nav
+
+@media (max-width: $screen-sm) {
+  .utility-nav {
+    display: none;
+  }
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-previous {
+  a {
+    .glyphicon {
+      display: inline-block;
+      left: 0;
+      position: relative;
+      top: -1px;
+      transition: left .2s ease;
+      vertical-align: middle;
+    }
+
+    &:hover .glyphicon {
+      left: -5px;
+    }
+  }
+}
+
+.nav-next {
+  margin-left: auto;
+
+  a {
+    .glyphicon {
+      display: inline-block;
+      left: 0;
+      position: relative;
+      top: -1px;
+      transition: left .2s ease;
+      vertical-align: middle;
+    }
+
+    &:hover .glyphicon {
+      left: 5px;
+    }
+  }
+}

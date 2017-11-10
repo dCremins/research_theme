@@ -1,0 +1,43 @@
+.container {
+  .page-header {
+    border-bottom: 0;
+    margin: 0;
+  }
+
+  blockquote {
+    padding-left: $base-pad;
+  }
+}
+
+.main.full {
+  float: none;
+  margin-bottom: $largest-horizontal;
+  width: 100%;
+ }
+
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+.featured-page {
+  display: block;
+  height: auto;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+
+  .column {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .row {
+    flex: 100%;
+    margin: 0 10px;
+    padding: 0;
+  }
+}

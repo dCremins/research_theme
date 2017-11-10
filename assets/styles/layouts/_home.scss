@@ -1,0 +1,25 @@
+.widgets {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.home-left,
+.home-right {
+  flex: 1;
+  padding: 15px $largest-horizontal 0;
+
+  @media (max-width: 782px) {
+    flex: 100%;
+    margin: 20px 0 0;
+  }
+}
+
+.home-right {
+  background-color: $gray-lighter;
+}
+
+.home-wide {
+  flex: 1 100%;
+}
