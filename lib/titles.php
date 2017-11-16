@@ -14,7 +14,12 @@ function title() {
     }
   } elseif (is_archive() && !is_search()) {
     if(is_author()){
-      return 'Author: '.get_queried_object()->first_name." ".get_queried_object()->last_name;
+			if (class_exists( 'Bylines\Objects\Byline' )) {
+				$author = get_term(get_queried_object()->term_id);
+	      return 'Author: '.$author->name;
+			} else {
+	      return 'Author: '.get_the_author();
+			}
     } else {
       return get_the_archive_title();
     }
