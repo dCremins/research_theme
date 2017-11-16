@@ -4,3 +4,32 @@
   margin: 0 0 $larger-horizontal;
   padding: $large-horizontal;
 }
+
+.archive {
+  .pagination {
+    padding-left: 1em;
+
+    .page-numbers {
+      padding: .5rem .8rem;
+    }
+
+    .current {
+      background-color: $brand-red;
+      color: $brand-white;
+		}
+  }
+
+  &.l-main {
+    padding-left: 0;
+    padding-right: 30px;
+	}
+}
+
+.pagination li {
+  float: left;
+  padding: 4px;
+
+  &::before {
+    content: none;
+  }
+}
