@@ -42,7 +42,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'author-post-thumbnail', 120, 120, true ); // Author Featured Image
+  add_image_size( 'author-post-thumbnail', 150, 150, true ); // Author Featured Image
   add_image_size( 'single-post-thumbnail', 1000, 9999 ); // Post Featured Image
   add_image_size( 'wide-page-thumbnail', 1900, 400, 9999 ); // Page Banner Image
 

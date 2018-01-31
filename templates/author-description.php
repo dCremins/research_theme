@@ -2,26 +2,41 @@
 if (class_exists( 'Bylines\Objects\Byline' )) {
 	if (get_queried_object()->description) {
 		$author = get_queried_object();
-
+		echo '<div class="author-page">';
 		// If Has Photo
-		if (has_post_thumbnail($author->ID)){
+		$photo = '';
+		$resume = '';
+		if (class_exists('acf')) {
+			$photo = get_field('author_image', 'byline_'.$author->term_id);
+			$resume = get_field('author_resume', 'byline_'.$author->term_id);
+		}
+
+		if( $photo ) {
 			echo '<div class="author-photo">'
-			. get_the_post_thumbnail($author->ID, 'author-post-thumbnail')
-	    . '</div>';
+			. wp_get_attachment_image( $photo, 'author-post-thumbnail' )
+			. '</div>';
 		}
 		// Description
-		echo '<div class="category-description';
-		if (has_post_thumbnail($author->ID)){
-			echo 'with-photo';
+		echo '<div class="author-description';
+		if ($photo){
+			echo ' with-photo';
 		}
 		echo '">';
 
 		echo '<p>' . $author->description . '</p>';
 
-		if ( get_the_author_meta( 'email') ) {
-			echo '<a href="mailto:';
-			the_author_meta( 'email' );
-			echo '">Contact this author</a>';
+		if ( $author->user_email ) {
+			echo '<a href="mailto:'
+			. $author->user_email
+			. '">Contact this Author</a>';
+			if ($resume) {
+				echo ' | ';
+			}
+		}
+		if ($resume) {
+			echo '<a href="'
+			. $resume
+			. '" target="_blank">View Resume</a>';
 		}
 
 		$file = get_field('file_test', $author->ID);
@@ -34,6 +49,7 @@ if (class_exists( 'Bylines\Objects\Byline' )) {
 			echo '<a href="' . $file['url'] . '">Resume</a>';
 		}
 
+		echo '</div>';
 		echo '</div>';
 	}
 }

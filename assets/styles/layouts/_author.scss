@@ -1,6 +1,7 @@
 .author-page {
   align-items: center;
   display: flex;
+	margin-bottom: $larger-horizontal;
   min-height: 120px;
   padding: 0 $base-pad;
 }
@@ -9,7 +10,7 @@
   background-color: $gray-lighter;
   flex: 1;
   font-family: $glypha-roman;
-  margin: $larger-horizontal 0;
+  margin: 0;
   padding: $large-horizontal;
 
   &.with-photo {
@@ -18,8 +19,12 @@
 }
 
 .author-photo {
-  border-radius: 60px;
+  border-radius: 75px;
   overflow: hidden;
+
+	img {
+		margin: 0;
+	}
 }
 
 .author-name {
