@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.1 =
+* Fixed Author Description
+* Added Bylines filter back in
+
 = 1.1.0 =
 * Changed post meta to match Research plugin (templates removed from plugin)
 

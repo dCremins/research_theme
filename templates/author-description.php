@@ -1,38 +1,41 @@
-<?php if ( get_the_author_meta( 'description') ) { ?>
-  <div class="author-page">
+<?php
+if (class_exists( 'Bylines\Objects\Byline' )) {
+	if (get_queried_object()->description) {
+		$author = get_queried_object();
 
-  <!-- If has Photo -->
-  <?php
-$ID = get_queried_object()->ID;
-  if (has_post_thumbnail($ID)){?>
-    <div class="author-photo">
-      <?php echo get_the_post_thumbnail($ID, 'author-post-thumbnail'); ?>
-    </div>
-  <?php } ?>
-  <!-- author-photo -->
+		// If Has Photo
+		if (has_post_thumbnail($author->ID)){
+			echo '<div class="author-photo">'
+			. get_the_post_thumbnail($author->ID, 'author-post-thumbnail')
+	    . '</div>';
+		}
+		// Description
+		echo '<div class="category-description';
+		if (has_post_thumbnail($author->ID)){
+			echo 'with-photo';
+		}
+		echo '">';
 
-  <!-- If has Description -->
+		echo '<p>' . $author->description . '</p>';
 
-    <div class="author-description <?php if (has_post_thumbnail($ID)){echo 'with-photo';}?>">
-      <p><?php the_author_meta( 'description' ); ?></p>
+		if ( get_the_author_meta( 'email') ) {
+			echo '<a href="mailto:';
+			the_author_meta( 'email' );
+			echo '">Contact this author</a>';
+		}
 
-      <?php if ( get_the_author_meta( 'email') ) { ?>
-        <a href="mailto:<?php the_author_meta( 'email' ); ?>">Contact this author</a>
-      <?php }
+		$file = get_field('file_test', $author->ID);
 
-      $file = get_field('file_test', $ID);
+		if ( $author->email && $file  ) {
+				echo ' | ';
+		 }
 
-      if ( get_the_author_meta( 'email') && $file  ) {
-          echo ' | ';
-       }
+		if ( $file ) {
+			echo '<a href="' . $file['url'] . '">Resume</a>';
+		}
 
-      if ( $file ) {?>
-        <a href="<?php echo $file['url']; ?>">Resume</a>
-      <?php } ?>
+		echo '</div>';
+	}
+}
 
-    </div>
-  <!-- author-description -->
-
-</div>
-
-<?php } ?>
+?>
