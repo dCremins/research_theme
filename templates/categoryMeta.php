@@ -9,7 +9,11 @@ if($category){
   foreach ($category as $cat) {
     $category_id = get_cat_ID( $cat->name );
     $category_link = get_category_link( $category_id );
-    echo '<li class="research-files"><a href="' . $category_link . '">' . $cat->name . '</a></li>';
+    echo '<li class="research-files"><a href="'
+		. $category_link
+		. '">'
+		. $cat->name
+		. '</a></li>';
   }
 }
 ?>
