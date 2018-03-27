@@ -28,7 +28,7 @@ add_filter('body_class', __NAMESPACE__ . '\\body_class');
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' &hellip; <a class="more" href="' . get_permalink() . '"> <span class="glyphicon glyphicon-bold-arrow"></span></a>';
+  return '&hellip; <span class="more"> <span class="glyphicon glyphicon-bold-arrow"></span></span>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
