@@ -13,6 +13,10 @@ body {
     &:hover {
       color: $link-darken-color;
     }
+
+		.more p {
+			text-decoration: underline;
+		}
   }
 
   h1 {
