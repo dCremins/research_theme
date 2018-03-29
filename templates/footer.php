@@ -4,9 +4,7 @@
       <address>
         <?php // ITRE LOGO
         if ( function_exists( 'the_custom_logo' ) ) {
-          echo '<img>';
           the_custom_logo();
-          echo '</img>';
         }
         echo '<h4>'.get_bloginfo('name').'</h4>';
         echo '<p>'.nl2br(get_theme_mod( 'address_textbox')).'</p';
