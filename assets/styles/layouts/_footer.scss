@@ -8,6 +8,7 @@
 
   .container {
     display: flex;
+    flex-flow: row wrap;
     padding: $base-pad 0;
   }
 

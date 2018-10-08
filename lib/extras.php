@@ -23,6 +23,13 @@ function body_class($classes) {
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
+/**
+* Add Mobile Menu
+**/
+function register_my_menu() {
+  register_nav_menu( 'mobile', 'Mobile Menu');
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_my_menu' );
 
 /**
  * Clean up the_excerpt()

@@ -42,5 +42,17 @@
       endif;
       ?>
     </nav>
+    <nav id="mobile-nav">
+      <?php
+      if (has_nav_menu('mobile')) :
+        wp_nav_menu([
+					'container'       => false,
+          'theme_location'  => 'mobile',
+          'menu_class'      => 'nav mobile-nav',
+					'title_li'        => false,
+        ]);
+      endif;
+      ?>
+    </nav>
   </div>
 </header>

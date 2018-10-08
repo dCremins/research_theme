@@ -23,6 +23,11 @@
         "scripts/customizer.js"
       ]
     },
+    "menu_toggle.js": {
+      "files": [
+        "scripts/menu_toggle.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }
